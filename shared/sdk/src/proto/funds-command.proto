@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package funds_command;
+
+option go_package = "./";
+
+service FundsCommandService {
+  rpc DepositFunds(DepositFundsRequest) returns (DepositFundsResponse) {}
+  rpc WithdrawFunds(WithdrawFundsRequest) returns (WithdrawFundsResponse) {}
+  rpc TransferFunds(TransferFundsRequest) returns (TransferFundsResponse) {}
+}
+
+// DepositFunds
+
+message DepositFundsRequest {
+  string id = 1;
+  int32 amount = 2;
+}
+
+message DepositFundsResponse {
+  int32 status = 1;
+  repeated string error = 2;
+}
+
+// WithdrawFunds
+
+message WithdrawFundsRequest {
+  string id = 1;
+  int32 amount = 2;
+}
+
+message WithdrawFundsResponse {
+  int32 status = 1;
+  repeated string error = 2;
+}
+
+// TransferFunds
+
+message TransferFundsRequest {
+  string fromId = 1;
+  string toId = 2;
+  int32 amount = 3;
+}
+
+message TransferFundsResponse {
+  int32 status = 1;
+  repeated string error = 2;
+}

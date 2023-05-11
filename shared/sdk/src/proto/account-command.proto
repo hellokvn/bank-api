@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package account_command;
+
+option go_package = "./";
+
+service AccountCommandService {
+  rpc OpenAccount(OpenAccountRequest) returns (OpenAccountResponse) {}
+  rpc CloseAccount(CloseAccountRequest) returns (CloseAccountResponse) {}
+}
+
+// OpenAccount
+
+message OpenAccountRequest {
+  string holder = 1;
+  string type = 2;
+  string email = 3;
+  int32 openingBalance = 4;
+}
+
+message OpenAccountResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  string data = 3;
+}
+
+// CloseAccount
+
+message CloseAccountRequest { string id = 1; }
+
+message CloseAccountResponse {
+  int32 status = 1;
+  repeated string error = 2;
+}
