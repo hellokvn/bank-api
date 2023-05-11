@@ -1,0 +1,18 @@
+{
+  "name": "bank-api",
+  "version": "1.0.0",
+  "description": "Bank API",
+  "author": "Kevin Vogel",
+  "npmClient": "pnpm",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@grpc/proto-loader": "^0.7.7",
+    "nx": "^16.1.4"
+  }
+}

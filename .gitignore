@@ -1,0 +1,8 @@
+node_modules
+dist
+.vscode
+.pnpm
+.local
+.cache
+*.tsbuildinfo
+*.log
