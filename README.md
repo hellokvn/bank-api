@@ -11,6 +11,7 @@ This repository is part of my article on Medium:
 $ nvm use
 $ pnpm install
 $ pnpm run build
+$ docker-compose up
 ```
 
 ## Open Account Flowchart
