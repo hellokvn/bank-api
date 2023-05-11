@@ -1,3 +1,4 @@
+import { Version } from '@app/common';
 import {
   AccountQueryServiceClient,
   ACCOUNT_QUERY_SERVICE_NAME,
@@ -10,7 +11,7 @@ import { Body, Controller, Inject, OnModuleInit, Post } from '@nestjs/common';
 import { ClientGrpc } from '@nestjs/microservices';
 import { Observable } from 'rxjs';
 
-@Controller('account/query')
+@Controller({ path: 'account/query', version: Version.One })
 export class QueryController implements OnModuleInit {
   @Inject(ACCOUNT_QUERY_SERVICE_NAME)
   private readonly client: ClientGrpc;

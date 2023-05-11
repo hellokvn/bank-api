@@ -1,3 +1,4 @@
+import { Version } from '@app/common';
 import {
   AccountCommandServiceClient,
   ACCOUNT_COMMAND_SERVICE_NAME,
@@ -10,7 +11,7 @@ import { Body, Controller, Inject, OnModuleInit, Post } from '@nestjs/common';
 import { ClientGrpc } from '@nestjs/microservices';
 import { Observable } from 'rxjs';
 
-@Controller('account/command')
+@Controller({ path: 'account/command', version: Version.One })
 export class CommandController implements OnModuleInit {
   @Inject(ACCOUNT_COMMAND_SERVICE_NAME)
   private readonly client: ClientGrpc;

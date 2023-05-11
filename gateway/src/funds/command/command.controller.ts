@@ -1,3 +1,4 @@
+import { Version } from '@app/common';
 import {
   DepositFundsRequest,
   DepositFundsResponse,
@@ -12,7 +13,7 @@ import { Body, Controller, Inject, OnModuleInit, Post } from '@nestjs/common';
 import { ClientGrpc } from '@nestjs/microservices';
 import { Observable } from 'rxjs';
 
-@Controller('funds/command')
+@Controller({ path: 'funds/command', version: Version.One })
 export class CommandController implements OnModuleInit {
   @Inject(FUNDS_COMMAND_SERVICE_NAME)
   private readonly client: ClientGrpc;
