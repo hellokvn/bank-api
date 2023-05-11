@@ -1,10 +1,15 @@
 {
-  "name": "bank-api",
+  "name": "bank-api-system",
   "version": "1.0.0",
   "description": "Bank API",
   "author": "Kevin Vogel",
   "npmClient": "pnpm",
   "scripts": {
+    "build": "pnpm run '/build:*/'",
+    "build:sdk": "pnpm --filter @bank/sdk build",
+    "gateway:dev": "pnpm --filter @bank/gateway run start:dev",
+    "prettier": "prettier --write .",
+    "graph": "nx graph",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
