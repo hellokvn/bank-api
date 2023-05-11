@@ -1,0 +1,21 @@
+{
+  "name": "@bank/sdk",
+  "version": "1.0.0",
+  "description": "SDK",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "./dist"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc --build",
+    "build:all": "ts-node tools/proto-gen.ts",
+    "dev": "watch 'pnpm run build' ./src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "ts-proto": "^1.147.2"
+  }
+}
