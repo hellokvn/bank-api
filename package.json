@@ -6,7 +6,7 @@
   "npmClient": "pnpm",
   "scripts": {
     "build": "pnpm run '/build:*/'",
-    "build:sdk": "pnpm --filter @bank/sdk build",
+    "build:sdk": "pnpm --filter @bank/sdk build:all",
     "gateway:dev": "pnpm --filter @bank/gateway run start:dev",
     "account:command:dev": "pnpm --filter @bank/account-command run start:dev",
     "account:query:dev": "pnpm --filter @bank/account-query run start:dev",
