@@ -8,6 +8,10 @@
     "build": "pnpm run '/build:*/'",
     "build:sdk": "pnpm --filter @bank/sdk build",
     "gateway:dev": "pnpm --filter @bank/gateway run start:dev",
+    "account:command:dev": "pnpm --filter @bank/account-command run start:dev",
+    "account:query:dev": "pnpm --filter @bank/account-query run start:dev",
+    "funds:command:dev": "pnpm --filter @bank/funds-command run start:dev",
+    "funds:query:dev": "pnpm --filter @bank/funds-query run start:dev",
     "prettier": "prettier --write .",
     "graph": "nx graph",
     "test": "echo \"Error: no test specified\" && exit 1"
