@@ -4,9 +4,7 @@
     "baseUrl": "./",
     "outDir": "./dist",
     "paths": {
-      "@app/*": [
-        "./src/*"
-      ]
+      "@app/*": ["./src/*"]
     }
   }
 }
