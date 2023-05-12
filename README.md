@@ -16,7 +16,7 @@ $ docker-compose up
 
 ## Open Account Flowchart
 
-![flowchart](https://raw.githubusercontent.com/hellokvn/bank-account-svc/master/.github/static/flowchart-open-account.jpg)
+![flowchart](https://raw.githubusercontent.com/hellokvn/bank-api/master/.github/static/flowchart.png)
 
 ## Author
 
