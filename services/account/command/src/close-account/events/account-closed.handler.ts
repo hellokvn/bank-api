@@ -1,5 +1,5 @@
 import { AccountEventProducer } from '@app/common/producer/account-event.producer';
-import { AccountClosedEvent } from '@bank/sdk';
+import { AccountClosedEvent, ACCOUNT_CLOSED_EVENT_NAME } from '@bank/sdk';
 import { Inject } from '@nestjs/common';
 import { EventsHandler, IEventHandler } from '@nestjs/cqrs';
 
@@ -10,8 +10,6 @@ export class AccountClosedHandler implements IEventHandler<AccountClosedEvent> {
 
   public async handle(event: AccountClosedEvent) {
     console.log('AccountClosedHandler/handle', { event });
-    const { constructor }: AccountClosedEvent = Object.getPrototypeOf(event);
-
-    this.eventProducer.produce(constructor.name, event);
+    this.eventProducer.produce(ACCOUNT_CLOSED_EVENT_NAME, event);
   }
 }

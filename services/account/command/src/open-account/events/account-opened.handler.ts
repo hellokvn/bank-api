@@ -1,5 +1,5 @@
 import { AccountEventProducer } from '@app/common/producer/account-event.producer';
-import { AccountOpenedEvent } from '@bank/sdk';
+import { AccountOpenedEvent, ACCOUNT_OPENED_EVENT_NAME } from '@bank/sdk';
 import { Inject } from '@nestjs/common';
 import { EventsHandler, IEventHandler } from '@nestjs/cqrs';
 
@@ -10,8 +10,6 @@ export class AccountOpenedHandler implements IEventHandler<AccountOpenedEvent> {
 
   public handle(event: AccountOpenedEvent): void {
     console.log('AccountOpenedHandler/handle');
-    const { constructor }: AccountOpenedEvent = Object.getPrototypeOf(event);
-
-    this.eventProducer.produce(constructor.name, event);
+    this.eventProducer.produce(ACCOUNT_OPENED_EVENT_NAME, event);
   }
 }

@@ -1,10 +1,10 @@
-import { AccountOpenedEvent, AccountType } from '@bank/sdk';
+import { AccountOpenedEvent, AccountType, ACCOUNT_OPENED_EVENT_NAME } from '@bank/sdk';
 import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity()
 export class Account {
   constructor(eventName?: string, payload?: AccountOpenedEvent) {
-    if (payload && eventName === 'AccountOpenedEvent') {
+    if (payload && eventName === ACCOUNT_OPENED_EVENT_NAME) {
       this.id = payload.id;
       this.holder = payload.holder;
       this.type = payload.type;

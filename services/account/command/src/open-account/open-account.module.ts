@@ -8,6 +8,7 @@ import { AccountEventProducer } from '../common/producer/account-event.producer'
 import { OpenAccountHandler } from './commands/open-account.handler';
 import { OpenAccountController } from './controllers/open-account.controller';
 import { AccountOpenedHandler } from './events/account-opened.handler';
+import { OpenAccountSaga } from './sagas/open-account.saga';
 
 @Module({
   imports: [
@@ -28,6 +29,6 @@ import { AccountOpenedHandler } from './events/account-opened.handler';
     ]),
   ],
   controllers: [OpenAccountController],
-  providers: [OpenAccountHandler, AccountOpenedHandler, AccountEventProducer, EventSourcingHandler],
+  providers: [OpenAccountHandler, AccountOpenedHandler, AccountEventProducer, EventSourcingHandler, OpenAccountSaga],
 })
 export class OpenAccountModule {}
