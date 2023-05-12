@@ -31,7 +31,7 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "kafkajs": "^2.2.4",
-    "nestjs-event-sourcing": "^1.0.1",
+    "nestjs-event-sourcing": "^1.0.2",
     "pg": "^8.10.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
