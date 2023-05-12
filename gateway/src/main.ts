@@ -1,13 +1,16 @@
-import { INestApplication, Logger } from '@nestjs/common';
+import { INestApplication, Logger, VersioningType } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { Version } from './common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const config: ConfigService = app.get(ConfigService);
   const logger: Logger = new Logger();
   const port: number = config.get('PORT');
+
+  configure(app);
 
   await app.listen(port, () => {
     logger.log(`[NOD] ${process.version}`);
@@ -18,7 +21,11 @@ async function bootstrap() {
 }
 
 function configure(app: INestApplication): void {
-  app.enableVersioning();
+  app.setGlobalPrefix('api');
+  app.enableVersioning({
+    type: VersioningType.URI,
+    defaultVersion: Version.One,
+  });
 }
 
 bootstrap();
