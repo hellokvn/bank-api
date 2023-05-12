@@ -1,4 +1,4 @@
-import { AccountClosedEvent } from '@bank/sdk';
+import { AccountClosedEvent, KAFKA_SERVICE_NAME } from '@bank/sdk';
 import { Controller, Inject, OnApplicationBootstrap, OnApplicationShutdown } from '@nestjs/common';
 import { EventBus } from '@nestjs/cqrs';
 import { ClientKafka, MessagePattern, Payload } from '@nestjs/microservices';
@@ -7,7 +7,7 @@ import { KafkaMessage } from 'kafkajs';
 
 @Controller()
 export class AccountConsumer implements OnApplicationBootstrap, OnApplicationShutdown {
-  @Inject('KAFKA_SERVICE')
+  @Inject(KAFKA_SERVICE_NAME)
   private readonly client: ClientKafka;
 
   @Inject(EventBus)

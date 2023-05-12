@@ -1,4 +1,5 @@
-export * from './filter';
+export * from './constants';
+export * from './filters';
 export * from './pb/account-command.pb';
 export * from './pb/account-query.pb';
 export * from './pb/funds-command.pb';
